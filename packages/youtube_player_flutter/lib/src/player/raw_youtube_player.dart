@@ -248,7 +248,7 @@ class _RawYoutubePlayerState extends State<RawYoutubePlayer>
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
     </head>
     <body>
-        <div id="player"></div>
+        <div id="player" style="width: 400%;height: 400%;transform: scale(0.25);transform-origin: left top;" ></div>
         <script>
             var tag = document.createElement('script');
             tag.src = "https://www.youtube.com/iframe_api";
@@ -258,8 +258,6 @@ class _RawYoutubePlayerState extends State<RawYoutubePlayer>
             var timerId;
             function onYouTubeIframeAPIReady() {
                 player = new YT.Player('player', {
-                    height: '100%',
-                    width: '100%',
                     videoId: '${controller!.initialVideoId}',
                     playerVars: {
                         'controls': 0,
